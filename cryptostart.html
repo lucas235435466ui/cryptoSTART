@@ -1,0 +1,636 @@
+<html>
+    <head>
+        <style>
+
+            body {
+               background-image: url(https://i.ibb.co/882F30s/background.png);
+               background-size: 100%;
+               background-repeat: no-repeat;
+               background-attachment: fixed;
+                color: white;
+                font-family: "Poppins", serif;
+            }
+
+
+            select:hover, #msaffjaasf:hover {
+                filter: brightness(160%);
+                transform: scale(1.03);
+                cursor: pointer;
+
+            }
+
+            #b {
+                background-color: rgba(255, 183, 49, 0); 
+                background-clip: background;
+             background-image: linear-gradient(to right, rgb(247, 81, 81), rgb(253, 107, 63), rgb(255, 120, 42), rgb(255, 168, 37));
+             border: none;
+              background-size: 500%;
+               font-family: 'Poppins', sans-serif; 
+
+             animation: gradient 4s linear infinite;
+             width: 10.5%;
+              height: 55px; 
+              color: white; 
+              font-size: 18px; 
+              border-radius: 45px;
+              transition: all ease-in-out 0.3s;
+            }
+
+            #b:hover {
+                cursor: pointer;
+                filter: brightness(110%);
+                transform: scale(1.03);
+
+            }
+
+
+            select {
+                border-radius: 40px;
+                 width: 104px; 
+                 height: 50px; 
+                 background-color:  #0c0322; 
+                 color: white; 
+                 border: 1px solid white;
+                  appearance: none; 
+                  padding-left: 38px;
+                   font-size: 18px;
+                   transition: all ease-in-out 0.4s;
+                   margin-left: 1050px;
+            }
+
+
+             
+           
+
+            @keyframes gradient {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+
+
+
+            .nav:hover {
+                text-decoration: underline rgb(255, 255, 255) 3px;
+            }
+
+
+            #closeBMark:hover {
+                cursor: pointer;
+                filter: brightness(80%);
+                transform: scale(1.03);
+            }
+        </style>
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <header>
+
+    
+
+<h2> CryptoVerse </h2>
+
+<nav style="display: flex; gap: 64px; ">
+<p id="market" class="nav"> Market </p>
+<p id="about" class="nav"> About Us </p>
+<p id="most" class="nav"> Most Popular </p>
+<p id="contact" class="nav"> Contact Us </p>
+
+
+
+
+
+    <select id="select" onchange="language()">
+        <option value="english"> EN </option>
+        <option value="spanish"> ES  </option>
+        <option value="german"> DE </option>
+        <option value="brazil"> BR </option>
+    </select>   
+
+    
+        
+</nav>  
+
+<button id="msaffjaasf" onclick="showACP()" style="border-radius: 40px;
+width: 134px; 
+height: 50px; 
+background-color:  #0c0322; 
+color: white; 
+border: 1px solid white;
+ appearance: none; 
+ padding-left: 9px;
+  font-size: 18px;
+  transition: all ease-in-out 0.4s;
+  margin-left: 1450px; position: absolute; margin-top: -57px;">  All Crypto Prices</button>
+
+</header>
+
+
+        <main>
+
+            <dialog id="blackM" style="width: 100%; height: 100%; display: none; background-color: #070213 ; margin-top: -210px; z-index: 300;">
+                <p style="color: rgba(255, 255, 255, 0.856); font-size: 25px;"> LIBRA price: $<span  id="libra" style="color: rgb(255, 255, 255);">1255 </span></p>
+                <p style="color: rgba(255, 255, 255, 0.205); font-size: 25px;"> ZCASH price: $<span style="color: rgba(255, 255, 255, 0.219);">16990 </span></p>
+                <p style="color: rgba(255, 255, 255, 0.87); font-size: 25px;"> RAPTOREUM price: $<span id="rpt" style="color: rgb(255, 255, 255);">550000 </span></p>
+
+                <p style="color: rgba(255, 255, 255, 0.87); font-size: 25px; margin-top: 70px;"> BITCOIN price: $<span id="btt" style="color: rgb(255, 255, 255);">550000 </span></p>
+                <p style="color: rgba(255, 255, 255, 0.87); font-size: 25px;"> ETHEREUM price: $<span id="ett" style="color: rgb(255, 255, 255);">550000 </span></p>
+                <p style="color: rgba(255, 255, 255, 0.87); font-size: 25px;"> MAKER price: $<span id="maa" style="color: rgb(255, 255, 255);">550000 </span></p>
+                <p style="color: rgba(255, 255, 255, 0.87); font-size: 25px;"> BNB price: $<span id="bnn" style="color: rgb(255, 255, 255);">550000 </span></p>
+
+                <button id="closeBMark" style="width:  10%; height: 36px; border-radius: 7px; background-color: rgb(255, 65, 65); color: white; border: none;
+                transition: all 0.3s ease-in-out; font-size: 20px;"> close </button>
+            </dialog>
+
+
+
+            <div style="margin-left: 90px;">
+            <h3 id="a" style="font-size: 80px; max-width: 430px;"> <span id="title">BUY & SELL</span> <span style="color: rgba(255, 183, 49, 0); background-clip: text;
+                background-image: linear-gradient(to right, rgb(207, 6, 6), rgb(248, 83, 33), rgb(218, 93, 21), rgb(255, 168, 37));
+                 background-size: 500%; font-family: 'Poppins', sans-serif; animation: gradient 4s linear infinite;"> CRYPTO</span></h3>
+            <p style="font-size: 25px; position: absolute; font-weight: 500; margin-top: -80px;"> AND NOW NFT</p>
+           
+           <h5 id="h" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(175, 175, 175);"> Buy and sell cryptocurrency instantly</h5>
+
+            <a target="_blank" href="loginCRYPTO.html">
+            <button id="b"><b> GET STARTED </b></button>
+             </a>
+    </div>
+        
+
+                <div id="crypto" style="display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 90px;">
+
+
+                    <div style="display: flex; border: 1px solid white; border-radius: 5px; width: 19%;  margin-left: 920px;">
+                        <img style="width: 55%;" src="https://static.vecteezy.com/system/resources/previews/019/767/927/non_2x/bitcoin-logo-bitcoin-icon-transparent-free-png.png">
+                        <h4 id="bitc" style="position: absolute; margin-left: 90px;" value="89312"> $89312</h4>
+                        <h5 style="color: rgb(255, 161, 39); font-weight: 400; margin-top: 50px; margin-right: 1px; position: relative;"> Bitcoin</h5>
+
+                    </div>
+        
+                        <div style="display: flex; border: 1px solid white; border-radius: 5px; width: 51%; margin-left: 156px;">
+                            <img style="width: 37.2%; height: 68px; margin-top: 13px; margin-left: 7px;"  src="https://i.ibb.co/d58GPsL/ethereum.png">
+                            <h4 id="et" style="position: absolute; margin-left: 90px;"> $2434</h4>
+                            <h5 style="color: rgb(117, 147, 243); font-weight: 400; margin-top: 50px; margin-left: 23px; position: relative;"> Ethereum</h5>
+                    </div>
+                    <div style="display: flex; border: 1px solid white; border-radius: 5px; width: 32%; margin-right: 500px;">
+                        <img style="width: 37.2%; height: 68px; margin-top: 13px; margin-left: 7px;"  src="https://cryptologos.cc/logos/maker-mkr-logo.png">
+                            <h4 id="mm" style="position: absolute; margin-left: 90px;"> $1024</h4>
+                            <h5 style="color: rgb(126, 247, 230); font-weight: 400; margin-top: 50px; margin-left: 23px; position: relative;"> Maker</h5>
+                        
+                    </div>
+                    <div style="display: flex; border: 1px solid white; border-radius: 5px; width: 21%; margin-left: 700px; margin-top: -101px;">
+                        <img style="width: 34%; height: 68px; margin-top: 13px; margin-left: 7px;"  src="https://cdn.prod.website-files.com/640b8191d2fdcfb39b135a5b/67212a925fc37088d92a2771_bnb.png">
+                            <h4 id="bnb" style="position: absolute; margin-left: 90px;"> $630,5</h4>
+                            <h5 style="color: rgb(126, 247, 230); font-weight: 400; margin-top: 50px; margin-left: 23px; position: relative;"> BNB</h5>
+                        
+                    </div>
+
+
+                </div>
+
+
+           
+    </main>
+     <footer>
+
+
+
+
+
+
+
+     </footer>
+
+
+
+
+
+     <script>
+
+        const select = document.getElementById("select")
+
+
+        const title = document.getElementById("title")
+        const market = document.getElementById("market")
+        const about = document.getElementById("about")
+        const most = document.getElementById("most")
+        const contact = document.getElementById("contact")
+
+        const h5 = document.getElementById("h")
+
+        let btcPrice = document.getElementById("bitc")
+        let et = document.getElementById("et")
+        let m = document.getElementById("mm")
+        let bnb = document.getElementById("bnb")
+        let libra = document.getElementById("libra")
+        let rpt = document.getElementById("rpt")
+
+        function language() {
+            if(select.value == "english") {
+                location.reload()
+            }
+
+            if(select.value == "spanish") {
+                
+                title.textContent = "COMPRA Y VENDE"
+                document.getElementById("a").style.maxWidth = "750"
+
+                market.textContent = "MERCADO"
+                about.textContent = "SOBRE NOSOTROS"
+                most.textContent = "MÁS POPULAR"
+                contact.textContent = "CONTÁCTANOS"
+
+                h.textContent = "Compra y vende crypto instantaneamente"
+
+                b.textContent = "PRUEBALO AHORA"
+            }
+            
+            if(select.value == "german") {
+                title.textContent = "KAUFEN UND VERKAUFEN"
+            document.getElementById("a").style.maxWidth = "530";
+
+            market.textContent = "MARKT";
+            about.textContent = "ÜBER UNS";
+            most.textContent = "BELIEBT";
+            contact.textContent = "KONTAKT";
+
+            h.textContent = "Kaufe und verkaufe Krypto sofort";
+
+            b.textContent = "JETZT TESTEN";
+
+
+            }
+            if(select.value == "brazil") {
+                title.textContent = "COMPRAR E VENDER";
+                document.getElementById("a").style.maxWidth = "530";
+
+                market.textContent = "MERCADO";
+                about.textContent = "SOBRE NÓS";
+                most.textContent = "POPULAR";
+                contact.textContent = "CONTATO";
+
+                h.textContent = "Compre e venda cripto instantaneamente";
+
+                b.textContent = "EXPERIMENTE";
+
+                
+            }
+        }
+
+
+
+        document.getElementById("closeBMark").addEventListener("click", () => {
+            document.getElementById("blackM").style.display = "none";
+        })
+
+
+        function showACP() {
+            document.getElementById("blackM").style.display = "block";
+        }
+
+
+let bitcoin = 89312;  
+
+
+let previousBitcoin = bitcoin; 
+
+function coin() {
+
+    previousBitcoin = bitcoin;
+
+    // Generate a random number between 0 and 5
+    let r = parseInt(Math.random() * 6);
+    
+
+    // Update the bitcoin value based on the random value
+    if (r === 0) {
+        bitcoin += 371;
+    } else if (r === 1) {
+        bitcoin += 237;
+    } else if (r === 2) {
+        bitcoin += 163;
+    } else if (r === 3) {
+        bitcoin -= 285;
+    } else if (r === 4) {
+        bitcoin -= 396;
+    } else if (r === 5) {
+        bitcoin -= 173;
+    }
+
+ 
+    if (bitcoin > previousBitcoin) {
+        btcPrice.style.color = "lightgreen";
+        document.getElementById("btt").style.color = "lightgreen";
+    } else if (bitcoin < previousBitcoin) {
+        btcPrice.style.color = "red";
+        document.getElementById("btt").style.color = "red";
+    }
+
+    btcPrice.style.transition = "2s ease-in-out all";
+
+    btcPrice.textContent = "$" + bitcoin;
+
+    localStorage.setItem("bitcoinValue", bitcoin);
+
+    document.getElementById("btt").textContent = bitcoin;
+}
+
+
+let ethereum = 2434
+
+let previouseth = ethereum; 
+
+function ether() {
+
+    previouseth = ethereum;
+
+    let r = parseInt(Math.random() * 6);
+
+   
+    if (r === 0) {
+        ethereum += 291;
+    } else if (r === 1) {
+        ethereum += 157;
+    } else if (r === 2) {
+        ethereum += 103;
+    } else if (r === 3) {
+        ethereum -= 245;
+    } else if (r === 4) {
+        ethereum -= 157;
+    } else if (r === 5) {
+        ethereum -= 113;
+    }
+
+    if(ethereum < 10) {
+        ethereum = 5
+    }
+    if (ethereum > previouseth) {
+        et.style.color = "lightgreen";
+        document.getElementById("ett").style.color = "lightgreen";
+    } else if (ethereum < previouseth) {
+        et.style.color = "red";
+        document.getElementById("ett").style.color = "red";
+    }
+
+    et.style.transition = "2s ease-in-out all";
+
+    et.textContent = "$" + ethereum;
+
+    localStorage.setItem("ethereumValue", ethereum);
+
+    document.getElementById("ett").textContent = ethereum;
+
+    
+
+}
+
+
+let maker = 1024;  
+
+let previousMaker = maker; 
+
+function mak() {
+
+    previousMaker = maker
+
+    // Generate a random number between 0 and 5
+    let r = parseInt(Math.random() * 6);
+    
+
+    // Update the bitcoin value based on the random value
+    if (r === 0) {
+        maker += 331;
+    } else if (r === 1) {
+        maker += 77;
+    } else if (r === 2) {
+        maker += 13;
+    } else if (r === 3) {
+        maker -= 125;
+    } else if (r === 4) {
+        maker -= 246;
+    } else if (r === 5) {
+        maker -= 23;
+    }
+
+ 
+    if(maker < 10) {
+        maker = 5
+    }
+    
+    if (maker > previousMaker) {
+        m.style.color = "lightgreen";
+        document.getElementById("maa").style.color = "lightgreen";
+    } else if (maker < previousMaker) {
+        m.style.color = "red";
+        document.getElementById("maa").style.color = "red";
+    }
+
+    m.style.transition = "2s ease-in-out all";
+
+    m.textContent = "$" + maker;
+
+    localStorage.setItem("makerValue", maker);
+
+    document.getElementById("maa").textContent = maker;
+
+}
+
+
+let b = 630.5
+
+let previousB = b; 
+
+function bn() {
+
+    previousB = b;
+
+    let r = parseInt(Math.random() * 6);
+
+   
+    if (r === 0) {
+        b += 221.5;
+    } else if (r === 1) {
+        b += 137.5;
+    } else if (r === 2) {
+        b += 83;
+    } else if (r === 3) {
+        b -= 215;
+    } else if (r === 4) {
+        b -= 127.5;
+    } else if (r === 5) {
+        b -= 93;
+    }
+
+    if(b < 10) {
+        b = 5
+    }
+    if (b > previousB) {
+        bnb.style.color = "lightgreen";
+        document.getElementById("bnn").style.color = "lightgreen";
+    } else if (b < previousB) {
+        bnb.style.color = "red";
+        document.getElementById("bnn").style.color = "red";
+    }
+
+    bnb.style.transition = "2s ease-in-out all";
+
+    bnb.textContent = "$" + b;
+
+    localStorage.setItem("bnbValue", b);
+
+    document.getElementById("bnn").textContent = b;
+    
+
+}
+
+
+let lib = 1255
+
+let previousLib = lib; 
+
+function libr() {
+
+    previousLib = lib
+
+let r = parseInt(Math.random() * 100);
+
+if (r >= 0 && r <= 9) {
+    lib += 321.5;
+} else if (r >= 10 && r <= 19) {
+    lib += 237.5;
+} else if (r >= 20 && r <= 29) {
+    lib += 183;
+} else if (r >= 30 && r <= 39) {
+    lib -= 315;
+} else if (r >= 40 && r <= 49) {
+    lib -= 227.5;
+} else if (r >= 50 && r <= 59) {
+    lib -= 193;
+} else if (r >= 60 && r <= 69) {
+    lib += 721.5;
+} else if (r >= 70 && r <= 79) {
+    lib += 537.5;
+} else if (r >= 80 && r <= 89) {
+    lib += 103;
+} else if (r >= 90 && r <= 97) {
+    lib -= 815;
+} else if (r === 98) {
+    lib += 7000; // Drastic increase
+} else if (r === 99) {
+    lib -= 7000; // Drastic decrease
+}
+
+    if(lib < 2) {
+        lib = 1
+    }
+    if (lib > previousLib) {
+        libra.style.color = "lightgreen";
+        document.getElementById("libra").style.color = "lightgreen";
+    } else if (lib < previousLib) {
+        libra.style.color = "red";
+        document.getElementById("libra").style.color = "red";
+    }
+
+    libra.style.transition = "2s ease-in-out all";
+
+    libra.textContent =  lib;
+
+    localStorage.setItem("libraValue", lib);
+
+    
+
+}
+
+
+let rp = 550000
+
+let previousRp = rp; 
+
+function rptFunc() {
+
+    previousRp = rp
+
+let r = parseInt(Math.random() * 100);
+
+if (r >= 0 && r <= 9) {
+    rp += 11000;  // ~2% increase
+} else if (r >= 10 && r <= 19) {
+    rp += 8800;   // ~1.6% increase
+} else if (r >= 20 && r <= 29) {
+    rp += 6600;   // ~1.2% increase
+} else if (r >= 30 && r <= 39) {
+    rp -= 12100;  // ~2.2% decrease
+} else if (r >= 40 && r <= 49) {
+    rp -= 8800;   // ~1.6% decrease
+} else if (r >= 50 && r <= 59) {
+    rp -= 6600;   // ~1.2% decrease
+} else if (r >= 60 && r <= 69) {
+    rp += 22000;  // ~4% increase
+} else if (r >= 70 && r <= 79) {
+    rp += 16000;  // ~2.9% increase
+} else if (r >= 80 && r <= 89) {
+    rp += 6000;   // ~1.1% increase
+} else if (r >= 90 && r <= 97) {
+    rp -= 26000;  // ~4.7% decrease
+} else if (r === 98) {
+    rp += 60000;  // ~10% drastic increase
+} else if (r === 99) {
+    rp -= 70000;  // ~10% drastic decrease
+}
+
+
+    if(rp < 2) {
+        rp = 1
+    }
+    if (rp > previousRp) {
+        rpt.style.color = "lightgreen";
+        document.getElementById("rpt").style.color = "lightgreen";
+    } else if (rp < previousRp) {
+        rpt.style.color = "red";
+        document.getElementById("rpt").style.color = "red";
+    }
+
+    rpt.style.transition = "2s ease-in-out all";
+
+    rpt.textContent =  rp;
+
+    localStorage.setItem("rptValue", rp);
+
+    
+
+}
+
+
+
+
+setInterval(coin, 3000);
+setInterval(ether, 2700);
+
+setInterval(mak, 3300);
+setInterval(bn, 3300);
+
+setInterval(libr, 11300);
+setInterval(rptFunc, 11300);
+
+
+
+
+
+
+     </script>
+    </body>
+</html>
